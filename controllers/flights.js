@@ -26,7 +26,7 @@ async function create(req, res) {
     try{
         if (req.body['departs'] === '') delete req.body['departs'];
         //if my departs form stays empty if will delete empty space and take on the default
-        await Flight.create(req.body);
+        await FlightModel.create(req.body);
         res.redirect('/flights');
     } catch (err) {
         //if there is an error, an error message will display

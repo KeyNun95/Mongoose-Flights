@@ -1,4 +1,5 @@
 const FlightModel = require('../models/flight');
+const flights = require('./flights');
 
 module.exports = {
     create
@@ -9,9 +10,9 @@ async function create(req, res) {
     try {
         const flightsFromTheList = await FlightModel.findById(req.params.id);
         //await controls are only allowed in async functions
-        flightsFromTheList.destinations.push(req.body);
+        flightsFromTheList.destinations.push(req.body).sort({'arrival': 1});
+        // how do i sort this?!?!
         await flightsFromTheList.save();
-        await flightsFromTheList.find(destinations).sort({[arrival]: 1});
         console.log(flightsFromTheList);
         res.redirect(`/flights/${req.params.id}`);  
     } catch(err) {
