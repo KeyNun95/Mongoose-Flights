@@ -10,7 +10,8 @@ async function create(req, res) {
     try {
         const flightsFromTheList = await FlightModel.findById(req.params.id);
         //await controls are only allowed in async functions
-        flightsFromTheList.destinations.push(req.body).sort({'arrival': 1});
+        //await tells the 
+        flightsFromTheList.destinations.push(req.body);
         // how do i sort this?!?!
         await flightsFromTheList.save();
         console.log(flightsFromTheList);
