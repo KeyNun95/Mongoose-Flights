@@ -8,5 +8,5 @@ const ticketSchema = new Schema({
 }, {
     timestamps: true
 });
-
+//this is exported to the controller
 module.exports = mongoose.model('Ticket', ticketSchema);
