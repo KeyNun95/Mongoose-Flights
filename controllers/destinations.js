@@ -1,5 +1,4 @@
 const FlightModel = require('../models/flight');
-const flights = require('./flights');
 //what is the purpose of this?
 
 module.exports = {

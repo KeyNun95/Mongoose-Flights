@@ -29,6 +29,17 @@
   <input type="submit" value="Add Destination">
 </form>
 
+<section id="show-tickets">
+  <button><a href="/flights/<%= flight._id %>/tickets/new" class="button"> New Ticket</a> </button> 
+  <div>Tickets:
+    <td>
+        <% tickets.forEach(function(tic){  %>
+            <div><%= 'Seat: ' + tic.seat + ' ' + 'Price: ' + tic.price + ' ' + 'Flight' + tic.flight%></div>
+            <% }) %>
+    </td>
+  </div>
+</section>
+
 <!-- for the list of reviews -->
 <% if (flight.destinations.length) { %>
     <table>

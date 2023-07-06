@@ -1,4 +1,5 @@
 const FlightModel = require('../models/flight');
+const TicketModel = require('../models/tickets');
 //this is whats connected to my schema
 module.exports = {
     index,
@@ -14,7 +15,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const flight = await FlightModel.findById(req.params.id).sort({'destinations.arrival': 'desc'});
+    const flight = await FlightModel.findById(req.params.id);
     console.log(flight);
     res.render('flights/show', { title: 'Destination Detail', flight});
 }
