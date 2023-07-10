@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h2>Prepare A Ticket</h2>
+<form action="/tickets" method="POST">
+  <label>Seat
+    <p>Please choose between A-F and 1-9</p>
+    <input type="text" name="seat">
+  </label><br>
+  <label>Price
+    <input type="text" name="price">
+  </label><br>
+  <label>Flight No.
+    <input type="text" name="flightNum" id="flightNum" value="<%= flight.airline %> <%= flight.flightNo %>">
+  </label><br>
+  <button type="submit">Add Ticket</button>
+</form>
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>

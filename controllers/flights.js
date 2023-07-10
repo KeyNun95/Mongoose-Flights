@@ -1,5 +1,5 @@
 const FlightModel = require('../models/flight');
-const TicketModel = require('../models/tickets');
+const TicketModel = require('../models/ticket');
 //this is whats connected to my schema
 module.exports = {
     index,
